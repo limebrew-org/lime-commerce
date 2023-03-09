@@ -10,10 +10,11 @@
 	</parent>
 	<groupId>in.limebrew.limecommerce</groupId>
 	<artifactId>limecommerce</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>${in.limebrew.project.version}</version>
 	<name>limecommerce</name>
 	<description>This is a sample CRUD application to mimic any e-commerce backend</description>
 	<properties>
+		<in.limebrew.project.version>1.0.0</in.limebrew.project.version>
 		<java.version>17</java.version>
 	</properties>
 	<dependencies>
@@ -30,6 +31,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
 		</dependency>
 	</dependencies>
 

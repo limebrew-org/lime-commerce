@@ -1,15 +1,21 @@
 package in.limebrew.limecommerce.entity;
 
-import jakarta.annotation.Generated;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 import org.springframework.data.mongodb.core.mapping.Field;
 
 @Document(collection = "products")
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class ProductItem {
     @Id
-    @Field( name = "id" )
-    public String id;
+    @Field( name = "_id" )
+    public ObjectId id;
 
     @Field( name = "name" )
     public String name;
@@ -25,16 +31,4 @@ public class ProductItem {
 
     @Field( name = "rating" )
     public Float rating;
-
-    public ProductItem() {
-    }
-
-    public ProductItem(String id, String name, String description, Integer stock_count, Double price, Float rating) {
-        this.id = id;
-        this.name = name;
-        this.description = description;
-        this.stock_count = stock_count;
-        this.price = price;
-        this.rating = rating;
-    }
 }

@@ -1,14 +1,13 @@
 package in.limebrew.limecommerce.service;
 
 import in.limebrew.limecommerce.entity.ProductItem;
+import org.bson.types.ObjectId;
 import java.util.List;
+import java.util.Optional;
 
 public interface ProductService {
     List<ProductItem> findAllProducts();
-    ProductItem findProductById(String id);
-//    ProductItem findProductByName(String name);
-    ProductItem addProduct(ProductItem productItem);
-//    void updateProductById(String id);
-//    void deleteProductbyId(String id);
-//    void deleteAll();
+    Optional<ProductItem> findProductById(ObjectId id);
+    Optional<ProductItem> addProduct(ProductItem productItem);
+    void deleteProductById(ObjectId id);
 }
