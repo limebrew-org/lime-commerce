@@ -17,8 +17,8 @@ public class ProductItem {
     @Field( name = "description" )
     public String description;
 
-    @Field( name = "count" )
-    public Integer stockCount;
+    @Field( name = "stock_count" )
+    public Integer stock_count;
 
     @Field( name = "price" )
     public Double price;
@@ -29,11 +29,11 @@ public class ProductItem {
     public ProductItem() {
     }
 
-    public ProductItem(String id, String name, String description, Integer stockCount, Double price, Float rating) {
+    public ProductItem(String id, String name, String description, Integer stock_count, Double price, Float rating) {
         this.id = id;
         this.name = name;
         this.description = description;
-        this.stockCount = stockCount;
+        this.stock_count = stock_count;
         this.price = price;
         this.rating = rating;
     }
