@@ -1,0 +1,40 @@
+version: "3.1"
+services:
+  api:
+    #? Set container name
+    container_name: lime_commerce_api
+
+    #? build image
+    build:
+      context: .
+      dockerfile: Dockerfile
+
+    #? Environment
+    environment:
+      MONGO_CONN_URL: "mongodb://lime_commerce_admin:testing123@lime_commerce_db:27017/lime_commerce_db?authSource=admin"
+
+    #? Ports
+    ports:
+      - 8080:8080
+
+    depends_on:
+      - db
+
+
+  db:
+    #? Set container name
+    container_name: lime_commerce_db
+    image: mongo:latest
+
+    #? Restart if down
+    restart: always
+
+    #? Environment
+    environment:
+      MONGO_INITDB_ROOT_USERNAME : "lime_commerce_admin"
+      MONGO_INITDB_ROOT_PASSWORD : "testing123"
+      MONGO_INITDB_DATABASE : "lime_commerce_db"
+
+    #? Ports
+    ports:
+      - 27017:27017

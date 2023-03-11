@@ -58,3 +58,5 @@ build/
 
 ### Environment Variables
 .env.prod
+credentials/
+build.sh
